@@ -46,4 +46,15 @@ ADAPTER SETTING:-
     Note IP Address of eth2 (like 192.168.56.xxx) for ssh 
         ip a
 
+ADD A CLIENT USER :-
+~~~~~~~~~~~~~~~~~~~~
+    ~# adduser ram 
+        PASSWORD SETTING FOR ram 
+
+ACCESS REMOTE ACCESS FOR VSCODE:-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~# nano /etc/ssh/sshd_config
+        AllowTcpForwarding yes
+        // save and exit from sshd_config
+    ~# rc-service sshd restart
 
