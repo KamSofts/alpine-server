@@ -1,0 +1,17 @@
+NETWORK SETTING:-
+~~~~~~~~~~~~~~~~~
+    ~# vi /etc/network/interface
+        // add this lines in interface file
+        auto eth1
+        iface eth1 inet dhcp
+        esc :wq enter // to save and exit from interface file
+    ~# poweroff
+
+ADAPTER SETTING:-
+~~~~~~~~~~~~~~~~~
+    In virtual box 
+        Add Network Adapter-2 
+        Type : Host-only Adapter
+    Start Alpine Linux
+    Note IP Address of eth2 (like 192.168.xxx.xxx) for ssh 
+        ip a

@@ -28,33 +28,8 @@ ENABLE COMMUNITY REPOSITORIES :-
     ~# nano /etc/apk/repositories 
     // uncomment community link (remove #)
 
-NETWORK SETTING:-
-~~~~~~~~~~~~~~~~~
-    ~# nano /etc/network/interface
-        // add this lines in interface file
-        auto eth1
-        iface eth1 inet dhcp
-        // save and exit from interface file
-    ~# poweroff
-
-ADAPTER SETTING:-
-~~~~~~~~~~~~~~~~~
-    In virtual box 
-        Add Netword Adapter-2 
-        Type Host-only Adapter
-    Start Alpine Linux
-    Note IP Address of eth2 (like 192.168.56.xxx) for ssh 
-        ip a
-
 ADD A CLIENT USER :-
 ~~~~~~~~~~~~~~~~~~~~
     ~# adduser ram 
         PASSWORD SETTING FOR ram 
-
-ACCESS REMOTE ACCESS FOR VSCODE:-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    ~# nano /etc/ssh/sshd_config
-        AllowTcpForwarding yes
-        // save and exit from sshd_config
-    ~# rc-service sshd restart
 

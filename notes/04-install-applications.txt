@@ -1,0 +1,34 @@
+INSTALL MARIADB SERVER:-
+~~~~~~~~~~~~~~~~~~~~~~~~
+    ~# apk update
+    ~# apk add mariadb mariadb-client mariadb-openrc
+    ~# mariadb-install-db --user=mysql --datadir=/var/lib/mysql
+    ~# rc-service mariadb start
+    ~# rc-update add mariadb default
+    ~# mysql_secure_installation 
+        Current root password       : enter
+        unix_socket authendication  : n 
+        Change root password        : n 
+        Remove anonymous user       : Y 
+        Disallow root login remotely: Y 
+        Remove test database        : Y 
+        Reload privilege tables now : Y 
+    
+    ~# mariadb
+        > CREATE DATABASE ram_db;
+        > CREATE USER ram@`%` IDENTIFIED BY 'ram';
+        > GRANT ALL PRIVILEGES ON ram_db.* TO ram@`%`;
+        > FLUSH PRIVILEGES;
+        > exit;
+
+NodeJS AND npm
+~~~~~~~~~~~~~~
+    ~# apk add nodejs 
+    ~# apk add npm
+
+ACCESS REMOTE ACCESS FOR VSCODE:-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~# nano /etc/ssh/sshd_config
+        AllowTcpForwarding yes
+        // save and exit from sshd_config
+    ~# rc-service sshd restart    
