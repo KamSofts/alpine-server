@@ -1,0 +1,49 @@
+Start Alpine Linux
+root login ( IDENTIFIED BY ~# )
+
+INSTALL NANO TEXT EDITOR :-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~# apk add nano
+
+CHANGE SCREEN RESOLUTION :-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~# nano /boot/extlinux.conf
+        APPEND ... ext4 quiet ... video=1024x768
+        // save and exit from extlinux.conf file
+    ~# reboot                                 
+
+CHANGE TERMINAL FONT :-
+~~~~~~~~~~~~~~~~~~~~~~~
+    ~# apk add terminus-font 
+    ~# nano /etc/conf.d/consolefont
+        #consolefont="default8x16.psf.gz"
+        consolefont="ter-118n.psf.gz"
+        // save and exit from consolefont file
+    ~# rc-service consolefont restart  (for immediate checking without reboot)
+    ~# rc-update add consolefont boot
+    ~# reboot                               
+
+ENABLE COMMUNITY REPOSITORIES :-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~# nano /etc/apk/repositories 
+    // uncomment community link (remove #)
+
+NETWORK SETTING:-
+~~~~~~~~~~~~~~~~~
+    ~# nano /etc/network/interface
+        // add this lines in interface file
+        auto eth1
+        iface eth1 inet dhcp
+        // save and exit from interface file
+    ~# poweroff
+
+ADAPTER SETTING:-
+~~~~~~~~~~~~~~~~~
+    In virtual box 
+        Add Netword Adapter-2 
+        Type Host-only Adapter
+    Start Alpine Linux
+    Note IP Address of eth2 (like 192.168.56.xxx) for ssh 
+        ip a
+
+

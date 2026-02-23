@@ -1,0 +1,35 @@
+Download : alpine-virt-[version]-x86_64.iso
+Name : ALPINE-LINUX (RAM=1GB, Core=1, Storage=8GB)
+
+HOW TO INSTALL (FIRST CONNECT INTERNET THEN START):
+~~~~~~~~~~~~~~~~
+localhost login : root ↵
+
+localhost:~# setup-alpine ↵
+Select keyboard layout : [none] us ↵
+Select variant (or 'abort'): us ↵
+Hostname        : alpinehost ↵
+Interface       : [eth0] ↵
+IP Address      : [dhcp] ↵
+Manual Network  : [n] ↵
+
+root PASSWORD SETTING
+
+Time-zone       : [UTC] ↵
+Proxy URL       : [none] ↵
+NTP Client      : [busybox] ↵
+APK Mirror      : [1] ↵ 
+
+NEW USER AND PASSWORD SETTING
+ssh key or URL  : [none] ↵ 
+Which ssh server: [openssh] ↵ 
+
+PARTITION :-
+which disk      : sda ↵
+use it type     : sys ↵  
+erase disk ?    : y ↵ 
+
+Installation is complete. Please reboot.
+alpinehost:~# poweroff ↵ 
+
+iso file drive : REMOVE DISK FROM VIRTUAL DISK
