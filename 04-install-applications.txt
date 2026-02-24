@@ -21,13 +21,22 @@ INSTALL MARIADB SERVER:-
         > FLUSH PRIVILEGES;
         > exit;
 
+REMOTE ACCESS FOR MARIADB:-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~# nano /etc/my.cfn.d/mariadb_server.cnf
+        [mysqld]
+        #skip-networking
+        bind-address=0.0.0.0    
+        // save and exit from mariadb_server.cnf
+    ~# rc-service mariadb restart
+
 NodeJS AND npm
 ~~~~~~~~~~~~~~
     ~# apk add nodejs 
     ~# apk add npm
 
-ACCESS REMOTE ACCESS FOR VSCODE:-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+REMOTE ACCESS FOR VSCODE:-
+~~~~~~~~~~~~~~~~~~~~~~~~~~
     ~# nano /etc/ssh/sshd_config
         AllowTcpForwarding yes
         // save and exit from sshd_config
